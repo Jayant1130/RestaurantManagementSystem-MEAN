@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 //
 const userRouter = require("./router/user.route");
+const itemRouter = require("./router/item.route");
 
 //mongodb url 
 
@@ -38,3 +39,4 @@ mongoose.connect(dbURL, {
     })
 
     app.use("/api/user",userRouter);
+    app.use("/api/item",itemRouter);
