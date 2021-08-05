@@ -25,3 +25,15 @@ const addItem = async (request, response) => {
     }
 }
 exports.addItem = addItem;
+
+//Get All Item API
+const getAllItem = async (request, response) => {
+    try {
+        const item = await Item.find()
+        response.status(201).json(item);
+    }
+    catch (error) {
+        console.log("error in getting item", error)
+    }
+}
+exports.getAllItem = getAllItem;
