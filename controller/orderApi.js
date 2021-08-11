@@ -1,9 +1,8 @@
-const Item = require("../model/itemSchema");
+const Item = require("../model/orderSchema");
 const { request, response } = require('express');
 
-const addItem = async (request, response) => {
-    console.log("hello world")
-    const { itemName, description, itemPrice, image } = request.body;
+const placeOrder = async (request, response) => {
+    const body = request.body.orderDetails;
     console.log("body: ", request.body);
     try {
         const isExist = await Item.findOne({ itemName });
